@@ -1,5 +1,9 @@
 from django.shortcuts import render
+from .models import Message, Room
 
-# Create your views here. renederizar e manipular.
-
-
+def home(request):
+    rooms = Room.objects.all()
+    return render(request, 'chat/home.html', {
+        'rooms': rooms,
+        
+        })

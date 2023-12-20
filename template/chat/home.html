@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block css %} 
+<style> 
+body {background-color: white;</style>
+{% endblock %}
+{% block content %}
+
+
+<div class="d-flex h-100">
+    <!-- SALAS -->
+    <div class="chat-rooms h-100 w-25">
+        <div class="rooms m-3">
+            <div class="d-flex justify-content-between">
+                <h3>chat<span class="text-primary">us</span></h3>
+                <button class="btn btn-transparent mb-2"><i class="bi bi-plus-circle-fill text-primary"></i></button>
+            </div>
+
+            <!-- Lista de Salas-->
+            <ul class="list-group shadow border-0">
+                {% for r in rooms %}
+                    <li class="list-group-item">{{r.title}}</li>
+                {% endfor  %}    
+               
+            </ul>
+        </div>
+    </div>
+    <!-- Menssanges-->
+    <div class="chat-messages h-100 w-75">
+
+        <!-- Lista de Menssagens-->
+        <div class="messages card m-3 p-3 h-75 shadow border-0 overflow-scroll">
+           {% include 'chat/list-messages.html'%}
+        </div>
+
+        
+        <!-- Input-->
+        <div class="send-message card m-3 shadow border-0">
+            <form>
+                <input type="text" class="form-control border-1 fs-5" placeholder="Escreva uma mensagem">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
