@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block css %} 
-<style> 
-body {background-color: white;</style>
+<link rel="stylesheet" href="{% static 'css/chatus.css' %}"
 {% endblock %}
+
 {% block content %}
 
 
@@ -44,3 +46,6 @@ body {background-color: white;</style>
 </div>
 {% endblock %}
 
+{% block js %}
+    <script defer src="{% static 'js/chatus.js' %}"></script>
+{% endblock %}
