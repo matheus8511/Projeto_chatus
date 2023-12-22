@@ -19,14 +19,13 @@
             </div>
 
             <!-- Lista de Salas-->
-            <ul class="list-group shadow border-0">
-                {% for r in rooms %}
-                    <li class="list-group-item">{{r.title}}</li>
-                {% endfor  %}    
+            <ul class="list-rooms list-group shadow border-0">
+                {% include 'chat/list-rooms.html' %}
                
             </ul>
         </div>
     </div>
+
     <!-- Menssanges-->
     <div class="chat-messages h-100 w-75">
 

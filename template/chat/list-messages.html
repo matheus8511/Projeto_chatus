@@ -1,13 +1,18 @@
 <ul class="list-group list-group-flush">
-    
-    {% for m in object.messages.all %}
-        <li class="list-group-item border-bottom-0">
-            <div class="d-flex justify-content-between">
-                <div class="content">
-                    <b>@{{m.user.username}}</b> {{m.text}}
+    {%  if object.messages.count > 0 %}    
+        {% for m in object.messages.all %}
+            <li class="list-group-item border-bottom-0">
+                <div class="d-flex justify-content-between">
+                    <div class="content">
+                        <b>@{{m.user.username}}</b> {{m.text}}
+                    </div>
+                    <div class="time ">{{m.created_at}}</div>
                 </div>
-                <div class="time ">{{m.created_at}}</div>
-            </div>
-        </li>
-    {% endfor %}     
+            </li>
+        {% endfor %}        
+    {%  else %}
+            <p> Nenhuma menssagem enviada ainda...</p>
+     {% endif %}       
+     
+            
 </ul>
